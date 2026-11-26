@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | StudyHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-page">
+
+    <div class="login-container">
+        <div class="login-header">
+            <h1>🎓 StudyHub</h1>
+            <p>Start your journey to academic success.</p>
+        </div>
+
+        <form id="registerForm">
+            <h2>Create Account</h2>
+            <p>Join StudyHub today!</p>
+
+            <label for="registerName">Full Name</label>
+            <input type="text" id="registerName" placeholder="Enter your full name" required>
+
+            <label for="registerEmail">Email Address</label>
+            <input type="email" id="registerEmail" placeholder="Enter your email" required>
+
+            <label for="registerPassword">Password</label>
+            <input type="password" id="registerPassword" placeholder="Create a password" minlength="8" required>
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" placeholder="Enter your password again" minlength="8" required>
+
+            <button type="submit">Create Account</button>
+
+            <p class="login-note">
+                Already have an account?
+                <a href="login.html">Log in</a>
+            </p>
+
+            <p id="registerMessage" role="status"></p>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyHub - Students' Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>StudyHub</h2>
+
+        <nav>
+
+            <a href="#">Dashboard</a>
+            <a href="#study-plan">Student Planner</a>
+            <a href="#courses-section">My Courses</a>
+            <a href="#exam-section">Exams</a>
+            <a href="#gpa-section">GPA Calculator</a>
+            <a href="#assignment-section">Assignments</a>
+            <a href="#progress-section">Progress</a>
+            <a href="#study-schedule">Study Schedule</a>
+            <a href="#settings">Settings</a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="header">
+
+            <div>
+                <h1 id="welcomeUser">Good afternoon, Michael</h1>
+                <p>Here is your study overview</p>
+            </div>
+
+            <div class="profile">
+                🧑‍🎓 <span id="profileDisplayName">Michael</span>
+                <small id="profileEmail">Email address</small>
+            </div>
+
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+
+        </header>
+
+        <section id="statistics" class="statistics">
+
+            <div class="card">
+                <h3>Courses</h3>
+                <p id="courseCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Assignments</h3>
+                <p id="assignmentCount">0 / 0</p>
+            </div>
+
+            <div class="card">
+                <h3>Upcoming Exam</h3>
+                <p id="examCount">1</p>
+            </div>
+
+            <div class="card">
+                <h3>GPA</h3>
+                <p id="dashboardGpa">0.00</p>
+            </div>
+
+        </section>
+
+        <!-- Today's Study Plan -->
+        <section id="study-plan" class="study-plan">
+            <h2>Today's Study Plan</h2>
+
+            <div class="study-item">
+                <span>10:00 AM</span>
+                <strong>Mathematics</strong>
+                <button class="study-btn">Completed</button>
+            </div>
+
+            <div class="study-item">
+                <span>1:00 PM</span>
+                <strong>Programming</strong>
+                <button class="study-btn">Start</button>
+            </div>
+
+            <div class="study-item">
+                <span>4:00 PM</span>
+                <strong>Physics</strong>
+                <button class="study-btn">Start</button>
+            </div>
+        </section>
+
+        <section id="courses-section" class="courses-section">
+            <div class="section-header">
+                <h2>My Courses</h2>
+                <button id="addCourseBtn">Add Course</button>
+            </div>
+
+            <div id="courseList" class="course-list">
+                <div class="course-card">
+                    <h3>Computer Science</h3>
+                    <p>COS 202</p>
+                </div>
+
+                <div class="course-card">
+                    <h3>Software Engineering</h3>
+                    <p>SEN 202</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="exam-section" class="exam-section">
+            <h2>Next Exam</h2>
+
+            <div class="exam-card">
+                <h3>Computer Science</h3>
+                <p id="examDateText">Exam Date: October 21, 2026</p>
+
+
+                <div class="countdown">
+
+                    <div>
+                        <span id="days">00</span>
+                        <small>Days</small>
+                    </div>
+
+                    <div>
+                        <span id="hours">00</span>
+                        <small>Hours</small>
+                    </div>
+
+                    <div>
+                        <span id="minutes">00</span>
+                        <small>Minutes</small>
+                    </div>
+
+                    <div>
+                        <span id="seconds">00</span>
+                        <small>Seconds</small>
+                    </div>
+
+                </div>
+
+                <p id="examStatus">Exam is coming up</p>
+
+                <div class="exam-notes">
+                    <h3>Exam Preparation Notes</h3>
+
+                    <textarea id="examNotes" placeholder="Write your exam preparation notes here..."></textarea>
+
+                    <button id="saveExamNotes">Save Notes</button>
+
+                    <p id="notesMessage"></p>
+                </div>
+
+                <button id="changeExamBtn">Change Exam Date</button>
+
+            </div>
+
+        </section>
+
+
+        <!-- GPA -->
+        <section id="gpa-section" class="gpa-section">
+            <h2>GPA Calculator</h2>
+
+            <div class="gpa-form">
+                <div class="input-group">
+                    <label>Coursename</label>
+                    <input type="text" id="courseName" placeholder="e.g. Computer Science">
+                </div>
+
+                <div class="input-group">
+                    <label>Grade</label>
+
+                    <select id="grade">
+                        <option value="">Select Grade</option>
+                        <option value="5">A</option>
+                        <option value="4">B</option>
+                        <option value="3">C</option>
+                        <option value="2">D</option>
+                        <option value="1">E</option>
+                        <option value="0">F</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Credit Unit</label>
+
+                    <input type="number" id="creditUnit" placeholder="e.g. 3" min="1">
+                </div>
+
+                <button id="addGradeBtn">Add Course</button>
+
+            </div>
+
+            <div class="grade-list">
+                <h3>Courses Added</h3>
+
+                <div id="gradeList">
+                    <!-- Courses will appear here -->
+                </div>
+
+            </div>
+
+            <div class="gpa-result">
+                <h3>Your GPA</h3>
+                <p id="gpaResult">0.00</p>
+
+                <button id="calculateGpaBtn">Calculate GPA</button>
+            </div>
+
+        </section>
+
+        <section id="assignment-section" class="assignment-section">
+            <div class="section-header">
+                <h2>Assignments</h2>
+                <button id="addAssignmentBtn">Add Assignment</button>
+            </div>
+
+            <div id="assignmentList">
+                <!-- Assignments will appear here -->
+            </div>
+        </section>
+
+        <!-- Progress -->
+        <section id="progress-section" class="progress-section">
+            <h2>Study Progress</h2>
+
+            <div class="progress-bar"></div>
+            <div id="progress"></div>
+            <p id="progressText">0% completed</p>
+        </section>
+
+
+        <!-- STUDY SCHEDULE SECTION -->
+        <section id="study-schedule">
+            <h2>My Study Schedule</h2>
+
+            <div class="schedule-form">
+                <input type="text" id="studySubject" placeholder="Enter subject name">
+
+                <input type="date" id="studyDate">
+
+                <input type="time" id="studyTime">
+
+                <button id="addStudySession">Add Study Session</button>
+            </div>
+
+            <div id="studySessions" class="study-sessions"></div>
+        </section>
+
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
